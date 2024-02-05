@@ -3,6 +3,29 @@ import re
 import os
 import pickle
 
+
+def save_database(database, velocityFile):
+    """
+    Save the database in binary format with backup.
+    
+    Parameters:
+    - database: The dictionary containing the data to be saved.
+    - velocityFile: The file path where the data should be saved.
+    """
+    # Display the final database
+    print(database)
+
+    # Save the database in binary format
+    with open(velocityFile, "wb") as f:
+        if os.path.exists(velocityFile):
+            # Create a backup of the existing file
+            d = subprocess.run(['cp', velocityFile, velocityFile+'.back'])
+
+        # Dump the database dictionary to the file
+        pickle.dump(database, f, protocol=2)
+
+
+        
 # Specify the file containing the list of dates
 dateList = 'disturb_list.txt'
 
@@ -70,6 +93,7 @@ for date in date_list:
                     user_input = input(f"Execute command? ('y' to execute, 'q' to quit): ").upper()
                     if user_input == "Q":
                         print("Quitting...")
+                        save_database(database, velocityFile)  
                         exit()
                     if user_input == "Y":
 
@@ -103,42 +127,25 @@ for date in date_list:
                             angle = stdout[angle_start + 20: angle_end]
                             angle_start = stdout.find("Angle (CW from N) = ", angle_end)
 
-                        # Save the values in the dictionary
-                        data_dict["cmd"]= cmd
-                        data_dict["V"] = v
-                        data_dict["Angle"] = angle
-                        print(data_dict)
+                        if (v != None and angle !=None):        
+                            # Save the values in the dictionary
+                            result_dict = {}
+                            result_dict["cmd"]= cmd
+                            result_dict["V"] = v
+                            result_dict["Angle"] = angle
+                            print(result_dict)
 
-                        # Update or add the entry to the database
-                        database[kstr] = data_dict
+                            # Update or add the entry to the database
+                            database[kstr] = result_dict
                     else:
                         continue
  
 # Display the final database
 print(database)
 
-# Save the database in binary format
-with open(velocityFile, "wb") as f:
-    if os.path.exists(velocityFile):
-        d = subprocess.run(['cp', velocityFile, velocityFile+'.back'])
-    pickle.dump(database, f, protocol=2)
+# Save the database using the function
+save_database(database, velocityFile)
                    
 # ...
 
     
-
-"""
-import subprocess
-
-# ファイルからdateのリストを読み込む
-with open('disturb_list.txt', 'r') as date_file:
-    date_list = [line.strip() for line in date_file]
-
-# dateごとに処理を実行
-for date in date_list:
-    # AWKコマンドを組み立て
-    awk_command = f"awk -v date={date} '{{gsub(/,/, " "); if ($4 > 300) {{cmd="python3 python/plot_aatr_vel.py "date" refpos_Hanoi2.dat "$2" "($8/3600.-0.1)" "($8/3600.+0.1); print cmd; system(cmd)}}}}' results/grad2d/grad2d_{date}000000.txt"
-
-    # AWKコマンドを実行
-    subprocess.run(awk_command, shell=True)
-"""
