@@ -176,12 +176,15 @@ $ python3 judgeByDate.py <出力ファイル(Hanoi_Status.txt)>
 ```
 
 #### Google Compute Portal のVMを使う 
-・Compute Engineサービスで、VMインスタンスを作成
-・SSH公開鍵を追加 
+・Compute Engineサービスで、VMインスタンスを作成 <br>
+
+・SSH公開鍵を追加 <br>
 　https://cloud.google.com/compute/docs/connect/add-ssh-keys?hl=ja&cloudshell=true#metadata
 　「プロジェクト メタデータに SSH 認証鍵を追加する」で[メタデータ]ページに移動して
 　　public-key username 
    をboxに記入して追加した。
+   
+   <br>
 ・各種インストール
 ```
   126  sudo apt install python3-pip
