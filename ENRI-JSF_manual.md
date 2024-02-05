@@ -1,52 +1,55 @@
 
-# ENRI‚Å‚Ì“d—£Œ—Œù”zŠÏ‘ªƒf[ƒ^‰ğÍì‹Æ‚Ìè‡ 
+# ENRIã§ã®é›»é›¢åœå‹¾é…è¦³æ¸¬ãƒ‡ãƒ¼ã‚¿è§£æä½œæ¥­ã®æ‰‹é † 
 
-## ‚OD€”õ
+## ï¼ï¼æº–å‚™
 
-Eì‹ÆƒfƒBƒŒƒNƒgƒŠ‚ÌŠm”FiVietnam or IND) 
+ãƒ»ä½œæ¥­ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ç¢ºèªï¼ˆVietnam or IND) 
+```
 enri/analysis/{Vietnam,IND} 
 enri/analysis/sfcbca/
-enri/analysis/jsf/    (‰ğÍ—pƒXƒNƒŠƒvƒgj
+enri/analysis/jsf/    (è§£æç”¨ã‚¹ã‚¯ãƒªãƒ—ãƒˆï¼‰
 enri/data/{Hanoi,Bandung,common}
+```
 
-Eo—Íæ@results/@‚Ìì¬
+ãƒ»å‡ºåŠ›å…ˆã€€results/ã€€ã®ä½œæˆ
+```
 mkdir -p results/{grad2d,output,sigma_vig,stec}/figs
+```
 
-
-EˆÈ‰º‚Ìİ’è‚ğgrep ‚ÅŠm”F‚µ‚ÄŠeƒtƒ@ƒCƒ‹‚ğİ’è
+ãƒ»ä»¥ä¸‹ã®è¨­å®šã‚’grep ã§ç¢ºèªã—ã¦å„ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨­å®š
 data_dir
 nav_dir
 sfcbca_bin
 cal_stec 
 
 
-## ‚PDstec ƒvƒƒbƒgì¬
+## ï¼‘ï¼stec ãƒ—ãƒ­ãƒƒãƒˆä½œæˆ
 
 $ python3 auto_stec.py  
 $ python3 auto_plot_aatr.py 
 
 
-## ‚QDŒn—ñƒvƒƒbƒgŠm”F
+## ï¼’ï¼æ™‚ç³»åˆ—ãƒ—ãƒ­ãƒƒãƒˆç¢ºèª
 
-ƒtƒ@ƒCƒ‹‚Ì—áF
+ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¾‹ï¼š
 
-./results/stec/Hanoi20220927.png@
+./results/stec/Hanoi20220927.pngã€€
 ./results/stec/IDN20220927.png
 
 
-Eï—“ú‚ÆÃ‰¸“ú‚ÌƒŠƒXƒgì¬
+ãƒ»æ“¾ä¹±æ—¥ã¨é™ç©æ—¥ã®ãƒªã‚¹ãƒˆä½œæˆ
 
-ƒvƒƒbƒg‚ğŒ©‚È‚ª‚ç judgeScript.py@ƒXƒNƒŠƒvƒg‚Å‹L˜^‚µ‚Ä‚¢‚­B
-i—vŠm”Fj
-”¼“ú’PˆÊ‚É”»’fB’‹–é’ö“xiday/night)‚Å‹æ•ª‚·‚é‚Ì‚Å‚æ‚¢‚©H
+ãƒ—ãƒ­ãƒƒãƒˆã‚’è¦‹ãªãŒã‚‰ judgeScript.pyã€€ã‚¹ã‚¯ãƒªãƒ—ãƒˆã§è¨˜éŒ²ã—ã¦ã„ãã€‚
+ï¼ˆè¦ç¢ºèªï¼‰
+åŠæ—¥å˜ä½ã«åˆ¤æ–­ã€‚æ˜¼å¤œç¨‹åº¦ï¼ˆday/night)ã§åŒºåˆ†ã™ã‚‹ã®ã§ã‚ˆã„ã‹ï¼Ÿ
 
-- ƒCƒ[ƒW‚Ì•\¦‚ÆŒ‹‰Ê‚Ì‹L˜^
+- ã‚¤ãƒ¡ãƒ¼ã‚¸ã®è¡¨ç¤ºã¨çµæœã®è¨˜éŒ²
 $ python3 judgeScript.py 
-@-> status.txt
-@i“ü—Íƒtƒ@ƒCƒ‹‚ÍƒXƒNƒŠƒvƒg“à‚Åw’è‚·‚é‚±‚Æj 
+ã€€-> status.txt
+ã€€ï¼ˆå…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã¯ã‚¹ã‚¯ãƒªãƒ—ãƒˆå†…ã§æŒ‡å®šã™ã‚‹ã“ã¨ï¼‰ 
 
 
-## ‚RD2ŸŒ³Œù”zŒvZ
+## ï¼“ï¼2æ¬¡å…ƒå‹¾é…è¨ˆç®—
 
 $ python3 auto_sfcbca.py 0 1
 $ python3 auto_sfcbca.py 1 2
@@ -54,125 +57,125 @@ $ python3 auto_sfcbca.py 2 0
  -> results/output/*.grad 
 
 $ python3 auto_plot_sfcbca.py 
- -> results/output/figs/IDN3IDN420221001000000.png ‘¼
+ -> results/output/figs/IDN3IDN420221001000000.png ä»–
 
 $ python3 auto_csum.py 
- -> results/sigma_vig/20220928000000csum.out@‘¼
-@¨@cyclic_csum.py‚Ípython2‚ÅÀs‚³‚ê‚Ä‚¢‚éBGCP‚Å‚Í‚»‚Ì‚½‚ß‚ÉƒGƒ‰[”­¶@
+ -> results/sigma_vig/20220928000000csum.outã€€ä»–
+ã€€â†’ã€€cyclic_csum.pyã¯python2ã§å®Ÿè¡Œã•ã‚Œã¦ã„ã‚‹ã€‚GCPã§ã¯ãã®ãŸã‚ã«ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿã€€
 
-i—vŠm”Fj
-‚±‚Ìo—Íƒtƒ@ƒCƒ‹‚É‚Í‘—¿‚Å‚Í14—ñ‚Ìƒf[ƒ^‚ª‚ ‚é‚±‚Æ‚É‚È‚Á‚Ä‚¢‚é‚ªA
-ÀÛ‚É‚Í11—ñ‚µ‚©‚È‚¢B2022/4/8‚ÉV‚µ‚­’Ç‰Á‚³‚ê‚½—ñ‚ª‚È‚¢B
-@¨@Œ»sƒo[ƒWƒ‡ƒ“‚Å–â‘è‚È‚¢
+ï¼ˆè¦ç¢ºèªï¼‰
+ã“ã®å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«ã«ã¯è³‡æ–™ã§ã¯14åˆ—ã®ãƒ‡ãƒ¼ã‚¿ãŒã‚ã‚‹ã“ã¨ã«ãªã£ã¦ã„ã‚‹ãŒã€
+å®Ÿéš›ã«ã¯11åˆ—ã—ã‹ãªã„ã€‚2022/4/8ã«æ–°ã—ãè¿½åŠ ã•ã‚ŒãŸåˆ—ãŒãªã„ã€‚
+ã€€â†’ã€€ç¾è¡Œãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§å•é¡Œãªã„
 
-## ‚SDCDFŒvZ
+## ï¼”ï¼CDFè¨ˆç®—
 
 $ python3 auto_cdf.py > auto_cdf.output.txt 2>&1 
 $ python3 auto_cdf.py |tee auto_cdf.output.txt 
  -> results/sigma_vig/2022****000000cdf.out 
 
-i—vŠm”Fj
-•W€o—Í‚ğ•Û‘¶‚·‚é•K—v‚ª‚ ‚é‚©HƒŠƒ_ƒCƒŒƒNƒg‚Åo—Í‚·‚é‚Æ
-print(ƒRƒ}ƒ“ƒh)‚Æos.system‚Ìo—Í‚ª•ª‚©‚ê‚Ä‚µ‚Ü‚¢A‚Ç‚Ì“ú•t‚Ì
-’l‚©•ª‚©‚ç‚È‚­‚È‚éB
+ï¼ˆè¦ç¢ºèªï¼‰
+æ¨™æº–å‡ºåŠ›ã‚’ä¿å­˜ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã‹ï¼Ÿãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆã§å‡ºåŠ›ã™ã‚‹ã¨
+print(ã‚³ãƒãƒ³ãƒ‰)ã¨os.systemã®å‡ºåŠ›ãŒåˆ†ã‹ã‚Œã¦ã—ã¾ã„ã€ã©ã®æ—¥ä»˜ã®
+å€¤ã‹åˆ†ã‹ã‚‰ãªããªã‚‹ã€‚
 
-Ã‰¸“úEï—“ú‚ÌƒŠƒXƒgì¬i“ü—Íƒtƒ@ƒCƒ‹İ’èj
+é™ç©æ—¥ãƒ»æ“¾ä¹±æ—¥ã®ãƒªã‚¹ãƒˆä½œæˆï¼ˆå…¥åŠ›ãƒ•ã‚¡ã‚¤ãƒ«è¨­å®šï¼‰
 $ python3 makeQuietList.py 
- -> quiet_list.txt @(**cdf.outƒtƒ@ƒCƒ‹‚ÌƒŠƒXƒgj
- -> disturb_list.txt (YYYYMMDD‚ÌƒŠƒXƒgj
+ -> quiet_list.txt ã€€(**cdf.outãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒªã‚¹ãƒˆï¼‰
+ -> disturb_list.txt (YYYYMMDDã®ãƒªã‚¹ãƒˆï¼‰
 
-CDFƒvƒƒbƒg
-<<<InflationFactor‚ğ’²®‚µ‚Ä“K³’l‚ğŒˆ’è‚·‚é>>>
+CDFãƒ—ãƒ­ãƒƒãƒˆ
+<<<InflationFactorã‚’èª¿æ•´ã—ã¦é©æ­£å€¤ã‚’æ±ºå®šã™ã‚‹>>>
 $ python3 python/plot_cdf_tot.py 1.2 quiet_list.txt
 
 Mean           : 0.087859 [mm/km]
 Std. (Raw)     : 1.687723 [mm/km]
 Std (Inflated).: 2.531584 [mm/km]
 
- -> ./20210319_cdf_tot.png iƒtƒ@ƒCƒ‹–¼‚Íplot_cdf_tot.py’†‚É‹LÚ‚ ‚èj
+ -> ./20210319_cdf_tot.png ï¼ˆãƒ•ã‚¡ã‚¤ãƒ«åã¯plot_cdf_tot.pyä¸­ã«è¨˜è¼‰ã‚ã‚Šï¼‰
 
 
-## ‚T.@‘¬“x‚Ì‘ª’è
+## ï¼•.ã€€é€Ÿåº¦ã®æ¸¬å®š
 
-Ecsum.out‚ÌƒŠƒXƒgì¬
+ãƒ»csum.outã®ãƒªã‚¹ãƒˆä½œæˆ
 $ find results/sigma_vig/*csum.out > flist_csum
 
-Egrad2ƒtƒ@ƒCƒ‹‚Ìì¬
+ãƒ»grad2ãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆ
 $ python3 auto_plot_grad2.py flist_csum
- -> results/grad2d/grad2d_20220927000000.txt ‘¼
+ -> results/grad2d/grad2d_20220927000000.txt ä»–
 
 
-Eï—“ú‚ÌƒŠƒXƒg‚©‚ç“ú•t‚ğ“Ç‚İ‚İAÅ‘åŒù”z‚ª‘å‚«‚¢PRN‚É‚Â‚¢‚Ä‘¬“x‚ğ‘ª’è‚·‚éB
+ãƒ»æ“¾ä¹±æ—¥ã®ãƒªã‚¹ãƒˆã‹ã‚‰æ—¥ä»˜ã‚’èª­ã¿è¾¼ã¿ã€æœ€å¤§å‹¾é…ãŒå¤§ãã„PRNã«ã¤ã„ã¦é€Ÿåº¦ã‚’æ¸¬å®šã™ã‚‹ã€‚
 
 $ python3 batch_plot_aatr_vel.py
- -> velocity_dict.pkl ‚É‘¬“x‚Ì‘ª’èŒ‹‰Ê‚Ì«‘‚ğƒoƒCƒiƒŠ‚Å•Û‘¶
+ -> velocity_dict.pkl ã«é€Ÿåº¦ã®æ¸¬å®šçµæœã®è¾æ›¸ã‚’ãƒã‚¤ãƒŠãƒªã§ä¿å­˜
 
 {'20221004-1': {'Date': '20221004', 'PRN': '1', 'MaxGrad': '130.446344', 'max_id2_str': '1848.000000', 'id2_time': '57109.00000021780', 'cmd': ['python3', 'python/plot_aatr_vel.py', '20221004', 'refpos_Hanoi2.dat', '1', '15.763611111171612', '15.96361111117161'], 'V': '172.720835', 'Angle': '-11.703966'}, '20221004-27': {'Date': '20221004', 'PRN': '27', 'MaxGrad': '130.756007', 'max_id2_str': '513609.000000', 'id2_time': '45518.0000000', 'V': '140.321086', 'Angle': '-7.653290'}}
 
 
-EŠm”F—p‚Ì}‚¾‚¯o—Í‚·‚é‚½‚ßApython/plot_aatr_vel_fig.py‚ğV‚½‚Éì¬‚µ‚½B
+ãƒ»ç¢ºèªç”¨ã®å›³ã ã‘å‡ºåŠ›ã™ã‚‹ãŸã‚ã€python/plot_aatr_vel_fig.pyã‚’æ–°ãŸã«ä½œæˆã—ãŸã€‚
 $ python3 batch_plot_aatr_vel_fig.py
- -> output_aatr_vel_20221005-27.png ‘¼
+ -> output_aatr_vel_20221005-27.png ä»–
 
-i—vŠm”Fj
-Å‘åŒù”z‚Ì‘å‚«‚³‚¾‚¯‚Å‚ÍA‘¬“x‘ª’è‚ª‚Å‚«‚È‚¢ê‡‚ª‘½‚­ì‹ÆŒø—¦‚ªˆ«‚¢B
-Œø—¦‚ğ‚ ‚°‚é•û–@‚Í‚È‚¢‚©H
-@¨@stec‚Ìâ‘Î’l‚ğŒ©‚é‚Æ‘I•Ê‚Å‚«‚é‚©‚à‚µ‚ê‚È‚¢B1000ˆÈã‚Ì‚à‚Ì‚Íƒ_ƒ
-@@plot_aatr_vel.py: plot(t3,stec3*tec2delay,label=site[site_id[2]])@‚ğŒ©‚é
-@@¨@stec2‚Ì’l‚ğ’²‚×‚é‘O‚ÉŒvZŠÔ‚ª‚©‚©‚Á‚Ä‚¢‚é‚Ì‚Å‚ ‚Ü‚èŒø—¦‚ªã‚ª‚ç‚È‚¢
+ï¼ˆè¦ç¢ºèªï¼‰
+æœ€å¤§å‹¾é…ã®å¤§ãã•ã ã‘ã§ã¯ã€é€Ÿåº¦æ¸¬å®šãŒã§ããªã„å ´åˆãŒå¤šãä½œæ¥­åŠ¹ç‡ãŒæ‚ªã„ã€‚
+åŠ¹ç‡ã‚’ã‚ã’ã‚‹æ–¹æ³•ã¯ãªã„ã‹ï¼Ÿ
+ã€€â†’ã€€stecã®çµ¶å¯¾å€¤ã‚’è¦‹ã‚‹ã¨é¸åˆ¥ã§ãã‚‹ã‹ã‚‚ã—ã‚Œãªã„ã€‚1000ä»¥ä¸Šã®ã‚‚ã®ã¯ãƒ€ãƒ¡
+ã€€ã€€plot_aatr_vel.py: plot(t3,stec3*tec2delay,label=site[site_id[2]])ã€€ã‚’è¦‹ã‚‹
+ã€€ã€€â†’ã€€stec2ã®å€¤ã‚’èª¿ã¹ã‚‹å‰ã«è¨ˆç®—æ™‚é–“ãŒã‹ã‹ã£ã¦ã„ã‚‹ã®ã§ã‚ã¾ã‚ŠåŠ¹ç‡ãŒä¸ŠãŒã‚‰ãªã„
 
 
-‚UDƒTƒCƒY‚Ì‘ª’è
+## ï¼–ï¼ã‚µã‚¤ã‚ºã®æ¸¬å®š
 
 $ python3 batch_plot_aatr_size.py
- -> size_dict.pkl ‚ÉƒTƒCƒY‚Ì‘ª’èŒ‹‰Ê‚Ì«‘‚ğƒoƒCƒiƒŠ‚Å•Û‘¶
+ -> size_dict.pkl ã«ã‚µã‚¤ã‚ºã®æ¸¬å®šçµæœã®è¾æ›¸ã‚’ãƒã‚¤ãƒŠãƒªã§ä¿å­˜
 
 result_dict: {'20221004-1': {'cmd': ['python3', 'python/plot_aatr_size.py', '20221004', 'refpos_Hanoi2.dat', '1', '15.763611111171612', '15.96361111117161', '172.720835', '-11.703966'], 'size': {'pht2': 144176.504047, 'vas2': 136952.331942, 'hust': 145173.096192}}, '20221004-27': {'cmd': ['python3', 'python/plot_aatr_size.py', '20221004', 'refpos_Hanoi2.dat', '27', '12.543888888888889', '12.743888888888888', '141.457992', '-8.126086'], 'size': {'pht2': 47084.380292, 'vas2': 44045.276995, 'hust': 46808.225723}}}
 
-i—vŠm”Fj
-Œ‹‰Ê‚ÍPython‚Ì«‘‚ğ•Û‘¶‚µ‚½ƒoƒCƒiƒŠƒtƒ@ƒCƒ‹‚Å‚à—Ç‚¢‚©H
-@¨ pickle‚ÌŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚Å•Û‘¶‚µ‚Ä‚Ù‚µ‚¢Bprotocol=2  ‚Åw’è
+ï¼ˆè¦ç¢ºèªï¼‰
+çµæœã¯Pythonã®è¾æ›¸ã‚’ä¿å­˜ã—ãŸãƒã‚¤ãƒŠãƒªãƒ•ã‚¡ã‚¤ãƒ«ã§ã‚‚è‰¯ã„ã‹ï¼Ÿ
+ã€€â†’ pickleã®å¤ã„ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã§ä¿å­˜ã—ã¦ã»ã—ã„ã€‚protocol=2  ã§æŒ‡å®š
 
-ƒf[ƒ^æ“¾—\’è
-2Œ19“ú‚ÌT
-Ÿ‰ñ2Œ28“ú14
+ãƒ‡ãƒ¼ã‚¿å–å¾—äºˆå®š
+2æœˆ19æ—¥ã®é€±
+æ¬¡å›2æœˆ28æ—¥14æ™‚
 
 
 
-œ@•â‘«F
+â—ã€€è£œè¶³ï¼š
 
-- ƒXƒ‰ƒCƒhƒVƒ‡[‚Åƒvƒƒbƒg‚ğŒ©‚é
+- ã‚¹ãƒ©ã‚¤ãƒ‰ã‚·ãƒ§ãƒ¼ã§ãƒ—ãƒ­ãƒƒãƒˆã‚’è¦‹ã‚‹
 $ python3 slideshow.py 
-@iresults/stec/Hanoi*.png‚ğŠJ‚­‚æ‚¤‚Éslideshow.py‚ğC³‚·‚é‚±‚Æj
+ã€€ï¼ˆresults/stec/Hanoi*.pngã‚’é–‹ãã‚ˆã†ã«slideshow.pyã‚’ä¿®æ­£ã™ã‚‹ã“ã¨ï¼‰
 
-- Œ‹‰Ê‚ğ‹L˜^‚µ‚Ä‚¢‚­
-$ python3 judgeByDate.py <o—Íƒtƒ@ƒCƒ‹(Hanoi_Status.txt)>
+- çµæœã‚’è¨˜éŒ²ã—ã¦ã„ã
+$ python3 judgeByDate.py <å‡ºåŠ›ãƒ•ã‚¡ã‚¤ãƒ«(Hanoi_Status.txt)>
 
 
-<<Google Compute Portal ‚ÌVM‚ğg‚¤>> 
-ECompute EngineƒT[ƒrƒX‚ÅAVMƒCƒ“ƒXƒ^ƒ“ƒX‚ğì¬
-ESSHŒöŠJŒ®‚ğ’Ç‰Á
-@https://cloud.google.com/compute/docs/connect/add-ssh-keys?hl=ja&cloudshell=true#metadata
-@uƒvƒƒWƒFƒNƒg ƒƒ^ƒf[ƒ^‚É SSH ”FØŒ®‚ğ’Ç‰Á‚·‚év‚Å[ƒƒ^ƒf[ƒ^]ƒy[ƒW‚ÉˆÚ“®‚µ‚Ä
-@@public-key username 
-   ‚ğbox‚É‹L“ü‚µ‚Ä’Ç‰Á‚µ‚½B
-EŠeíƒCƒ“ƒXƒg[ƒ‹
+<<Google Compute Portal ã®VMã‚’ä½¿ã†>> 
+ãƒ»Compute Engineã‚µãƒ¼ãƒ“ã‚¹ã§ã€VMã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ä½œæˆ
+ãƒ»SSHå…¬é–‹éµã‚’è¿½åŠ 
+ã€€https://cloud.google.com/compute/docs/connect/add-ssh-keys?hl=ja&cloudshell=true#metadata
+ã€€ã€Œãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿ã« SSH èªè¨¼éµã‚’è¿½åŠ ã™ã‚‹ã€ã§[ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿]ãƒšãƒ¼ã‚¸ã«ç§»å‹•ã—ã¦
+ã€€ã€€public-key username 
+   ã‚’boxã«è¨˜å…¥ã—ã¦è¿½åŠ ã—ãŸã€‚
+ãƒ»å„ç¨®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
   126  sudo apt install python3-pip
   139  sudo apt install x11-apps
   133  pip3 install Pillow
   121  sudo apt-get install python3-tk
 
 toshinobu_takagi@toshinobu:~/work$ python3 ./judgeByImageDate.py Hanoi 
-@¨@original‚Å‚ÍWindow‚ªo‚È‚©‚Á‚½Btkinter‚ğg‚¤‚æ‚¤‚É•ÏX‚µ‚Ä judgeScript.py‚ğì¬
+ã€€â†’ã€€originalã§ã¯WindowãŒå‡ºãªã‹ã£ãŸã€‚tkinterã‚’ä½¿ã†ã‚ˆã†ã«å¤‰æ›´ã—ã¦ judgeScript.pyã‚’ä½œæˆ
 
-EVNC‚ğ“ü‚ê‚Ä‚İ‚é
+ãƒ»VNCã‚’å…¥ã‚Œã¦ã¿ã‚‹
   128  sudo apt-get install xfce4 xfce4-goodies
   129  sudo apt-get install tightvncserver
   193  tightvncserver :1 -localhost no -geometry 1680x980 -alwaysshared -nevershared -clipboard yes -depth 24
   192  vncserver -kill :1
-GCPƒRƒ“ƒ\[ƒ‹‚Åƒtƒ@ƒCƒAƒEƒH[ƒ‹‚ğİ’èi5901j‚ğŠJ‚¯‚½
-@¨@VNC viewer‚ÅÚ‘±‚Å‚«‚½B‚µ‚©‚µterminal‚ª‚Ç‚¤‚µ‚Ä‚àŠJ‚©‚È‚¢
-@¨@Alt+F2 ‚ÅLauncher‚ªo‚Ä‚«‚½‚Ì‚ÅAterminal‚ğ‹N“®‚Å‚«‚½
+GCPã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã§ãƒ•ã‚¡ã‚¤ã‚¢ã‚¦ã‚©ãƒ¼ãƒ«ã‚’è¨­å®šï¼ˆ5901ï¼‰ã‚’é–‹ã‘ãŸ
+ã€€â†’ã€€VNC viewerã§æ¥ç¶šã§ããŸã€‚ã—ã‹ã—terminalãŒã©ã†ã—ã¦ã‚‚é–‹ã‹ãªã„
+ã€€â†’ã€€Alt+F2 ã§LauncherãŒå‡ºã¦ããŸã®ã§ã€terminalã‚’èµ·å‹•ã§ããŸ
 
 
 <<github>>
