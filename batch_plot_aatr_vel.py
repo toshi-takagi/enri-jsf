@@ -140,8 +140,6 @@ for date in date_list:
                     else:
                         continue
  
-# Display the final database
-print(database)
 
 # Save the database using the function
 save_database(database, velocityFile)
