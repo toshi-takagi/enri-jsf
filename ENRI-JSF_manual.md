@@ -164,33 +164,30 @@ result_dict: {'20221004-1': {'cmd': ['python3', 'python/plot_aatr_size.py', '202
 
 ### 補足：
 
-- スライドショーでプロットを見る
+・スライドショーでプロットを見る
 ```
 $ python3 slideshow.py 
 　（results/stec/Hanoi*.pngを開くようにslideshow.pyを修正すること）
 ```
 
-- 結果を記録していく
+・結果を記録していく
 ```
 $ python3 judgeByDate.py <出力ファイル(Hanoi_Status.txt)>
 ```
 
-・Google Compute Portal のVMを使う 
-- Compute Engineサービスで、VMインスタンスを作成
-- SSH公開鍵を追加 
+#### Google Compute Portal のVMを使う 
+・Compute Engineサービスで、VMインスタンスを作成
+・SSH公開鍵を追加 
 　https://cloud.google.com/compute/docs/connect/add-ssh-keys?hl=ja&cloudshell=true#metadata
 　「プロジェクト メタデータに SSH 認証鍵を追加する」で[メタデータ]ページに移動して
 　　public-key username 
    をboxに記入して追加した。
-- 各種インストール
+・各種インストール
 ```
   126  sudo apt install python3-pip
   139  sudo apt install x11-apps
   133  pip3 install Pillow
   121  sudo apt-get install python3-tk
-
-toshinobu_takagi@toshinobu:~/work$ python3 ./judgeByImageDate.py Hanoi 
-　→　originalではWindowが出なかった。tkinterを使うように変更して judgeScript.pyを作成
 ```
 
 ・VNCを入れてみる
@@ -199,10 +196,11 @@ toshinobu_takagi@toshinobu:~/work$ python3 ./judgeByImageDate.py Hanoi
   129  sudo apt-get install tightvncserver
   193  tightvncserver :1 -localhost no -geometry 1680x980 -alwaysshared -nevershared -clipboard yes -depth 24
   192  vncserver -kill :1
+```
+
 GCPコンソールでファイアウォールを設定（5901）を開けた
 　→　VNC viewerで接続できた。しかしterminalがどうしても開かない
 　→　Alt+F2 でLauncherが出てきたので、terminalを起動できた
-```
 
 ・github
 ```
