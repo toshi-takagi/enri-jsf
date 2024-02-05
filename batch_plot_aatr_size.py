@@ -79,7 +79,7 @@ for cmd in new_command_list:
     user_input = input(f"Execute command? ('y' to execute, 'q' to quit): ").upper()
     if user_input == "Q":
         print("Quitting...")
-        save_database(database, velocityFile)  
+        save_database(result_dict, sizeFile)        
         exit()
     if user_input == "Y":
         # Check if kstr exists in the database
