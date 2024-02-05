@@ -162,17 +162,20 @@ result_dict: {'20221004-1': {'cmd': ['python3', 'python/plot_aatr_size.py', '202
 
 
 
-●　補足：
+### 補足：
 
 - スライドショーでプロットを見る
+```
 $ python3 slideshow.py 
 　（results/stec/Hanoi*.pngを開くようにslideshow.pyを修正すること）
+```
 
 - 結果を記録していく
+```
 $ python3 judgeByDate.py <出力ファイル(Hanoi_Status.txt)>
+```
 
-
-<<Google Compute Portal のVMを使う>> 
+・Google Compute Portal のVMを使う 
 - Compute Engineサービスで、VMインスタンスを作成
 - SSH公開鍵を追加 
 　https://cloud.google.com/compute/docs/connect/add-ssh-keys?hl=ja&cloudshell=true#metadata
@@ -190,7 +193,7 @@ toshinobu_takagi@toshinobu:~/work$ python3 ./judgeByImageDate.py Hanoi
 　→　originalではWindowが出なかった。tkinterを使うように変更して judgeScript.pyを作成
 ```
 
--VNCを入れてみる
+・VNCを入れてみる
 ```
   128  sudo apt-get install xfce4 xfce4-goodies
   129  sudo apt-get install tightvncserver
@@ -201,7 +204,7 @@ GCPコンソールでファイアウォールを設定（5901）を開けた
 　→　Alt+F2 でLauncherが出てきたので、terminalを起動できた
 ```
 
-<<github>>
+・github
 ```
 takagits@jsfnow10p245:~/work/enri/analysis/jsf$ 
 git init
