@@ -184,7 +184,6 @@ $ python3 judgeByDate.py <出力ファイル(Hanoi_Status.txt)>
 　　public-key username 
    をboxに記入して追加した。
    
-   <br>
 ・各種インストール
 ```
   126  sudo apt install python3-pip
