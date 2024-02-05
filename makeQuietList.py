@@ -1,4 +1,3 @@
-
 import re
 
 status_file = 'status.txt'
