@@ -46,6 +46,17 @@ else:
     database = {}
 
 
+status_vel = {}
+with open('status_vel.txt', 'r') as status_vel_file:
+    # Iterate through each line in the file
+    for line in status_vel_file:
+        fields = line.strip().split()
+        if len(fields) >= 2:
+            match = re.search(r'(\d{8}-\d+)', fields[0])
+            if match:
+                key = match.group(1)
+                status_vel[key] = fields[1]
+    
 # ...
 
 # Process for each date in the list
@@ -82,11 +93,14 @@ for date in date_list:
 
                 command = " ".join(cmd)
 
-                # Execute the Python script
-                if float(data_dict['MaxGrad']) > 100:
-                    kstr = date + '-' + satNo
 
-
+                kstr = f'{date}-{int(satNo):02d}'
+                isGood = False
+                if kstr in status_vel:                    
+                    if status_vel[kstr] == 'Good':
+                        isGood = True
+                    
+                if isGood: 
                     print(command)
                     print(f"MaxGrad={data_dict['MaxGrad']}")
                     
