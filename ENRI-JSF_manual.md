@@ -128,8 +128,7 @@ $ python3 batch_plot_aatr_vel_fig.py
 
 ・速度測定に使えるデータの選定
 
-プロットを見ながら judgeVelScript.py　スクリプトで記録していく。
-- イメージの表示と結果の記録
+プロットを見ながら judgeVelScript.py　スクリプトで記録していく。イメージの表示と結果の記録を実行。
 ```
 $ python3 judgeVelScript.py  （入力ファイル[*.png]はスクリプト内で指定）
 　-> status_vel.txt
@@ -156,18 +155,13 @@ $ python3 batch_plot_aatr_vel.py
 {'20221004-27': {'cmd': ['python3', 'python/plot_aatr_vel_jsf.py', '20221004', 'refpos_Hanoi2.dat', '27', '12.543888888888889', '12.743888888888888'], 'V': '138.899076', 'Angle': '-5.844579'}, '20221004-1': {'cmd': ['python3', 'python/plot_aatr_vel_jsf.py', '20221004', 'refpos_Hanoi2.dat', '1', '15.763611111171612', '15.96361111117161'], 'V': '173.346284', 'Angle': '-9.994422'}}
 ```
 
-・確認用の図だけ出力するため、python/plot_aatr_vel_fig.pyを新たに作成した。
-```
-$ python3 batch_plot_aatr_vel_fig.py
- -> output_aatr_vel_20221005-27.png 他
-```
-
+### メモ
 最大勾配の大きさだけでは、速度測定ができない場合が多く作業効率が悪い。
 効率をあげる方法はないか？ <br> 
  　→　stecの絶対値を見ると選別できるかもしれない。1000以上のものはダメ
 　　`plot_aatr_vel.py: plot(t3,stec3*tec2delay,label=site[site_id[2]])`　を見る <br>
-　　→　stec2の値を調べる前に計算時間がかかっているのであまり効率が上がらない
-
+　　→　stec2の値を調べる前に計算時間がかかっているのであまり効率が上がらない <br>
+　→　プロットを見て結果を記録することにした（judgeVelScript.py)
 
 ## ６．サイズの測定
 ```
