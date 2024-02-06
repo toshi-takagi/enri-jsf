@@ -126,6 +126,9 @@ $ python3 batch_plot_aatr_vel_fig.py　（refposFileを場所に合わせてス�
  -> results/figs/output_aatr_vel_20221006-20.png 他
 ```
 
+（要確認） <br>
+IDNのケースで、速度測定用のプロットが一枚も出てこない。`results/grad2d/grad2d_20220927000000.png`他を見ると、プロットされているデータ点が少なすぎる。
+
 ・速度測定に使えるデータの選定
 
 プロットを見ながら judgeVelScript.py　スクリプトで記録していく。イメージの表示と結果の記録を実行。
