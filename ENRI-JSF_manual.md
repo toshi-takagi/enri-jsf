@@ -13,7 +13,7 @@ enri/data/{Hanoi,Bandung,common}
 
 ・出力先　results/　の作成
 ```
-mkdir -p results/{grad2d,output,sigma_vig,stec}/figs
+mkdir -p results/{grad2d,output,sigma_vig,stec,figs}/figs
 ```
 
 ・以下の設定をgrep で確認して各ファイルを設定
@@ -120,6 +120,13 @@ $ python3 auto_plot_grad2.py flist_csum
  -> results/grad2d/grad2d_20220927000000.txt 他
 ```
 
+・擾乱日のリストから日付を読み込み、最大勾配が大きいPRNについて速度測定用のプロットを作成
+```
+$ python3 batch_plot_aatr_vel_fig.py
+ -> figs/output_aatr_vel_20221006-20.png 他
+```
+
+
 ・擾乱日のリストから日付を読み込み、最大勾配が大きいPRNについて速度を測定する。
 ```
 $ python3 batch_plot_aatr_vel.py
@@ -155,11 +162,17 @@ $ python3 batch_plot_aatr_size.py
 result_dict: {'20221004-1': {'cmd': ['python3', 'python/plot_aatr_size.py', '20221004', 'refpos_Hanoi2.dat', '1', '15.763611111171612', '15.96361111117161', '172.720835', '-11.703966'], 'size': {'pht2': 144176.504047, 'vas2': 136952.331942, 'hust': 145173.096192}}, '20221004-27': {'cmd': ['python3', 'python/plot_aatr_size.py', '20221004', 'refpos_Hanoi2.dat', '27', '12.543888888888889', '12.743888888888888', '141.457992', '-8.126086'], 'size': {'pht2': 47084.380292, 'vas2': 44045.276995, 'hust': 46808.225723}}}
 ```
 
-
-データ取得予定
-2月19日の週
-次回2月28日14時
-
+#### バッチ処理用
+```
+python3 auto_stec.py  
+python3 auto_plot_aatr.py
+python3 auto_sfcbca.py 0 1
+python3 auto_sfcbca.py 1 2
+python3 auto_sfcbca.py 2 0
+python3 auto_plot_sfcbca.py
+python3 auto_csum.py
+python3 auto_cdf.py > auto_cdf.output.txt 2>&1
+```
 
 
 ### 補足：
