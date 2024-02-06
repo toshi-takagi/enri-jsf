@@ -3,6 +3,9 @@ import re
 import os
 import pickle
 
+#refposFile = 'refpos_Hanoi2.dat'
+refposFile = 'refpos_IDN_for_sigma_20230322.txt' #### 20230320
+print('Reference position file = '+refposFile)
 
 def save_database(database, velocityFile):
     """
@@ -85,7 +88,7 @@ for date in date_list:
                     'python3',
                     'python/plot_aatr_vel_jsf.py',
                     str(date),
-                    'refpos_Hanoi2.dat',
+                    refposFile,
                     str(satNo),
                     str(float(time) / 3600. - 0.1),
                     str(float(time) / 3600. + 0.1)

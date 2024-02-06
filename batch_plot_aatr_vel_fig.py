@@ -2,12 +2,26 @@ import subprocess
 import re
 import os
 
-# Specify the file containing the list of dates
-dateList = 'disturb_list.txt'
+#refposFile = 'refpos_Hanoi2.dat'
+refposFile = 'refpos_IDN_for_sigma_20230322.txt' #### 20230320
 
-# Read the list of dates from the file
-with open(dateList, 'r') as date_file:
-    date_list = [line.strip() for line in date_file]
+print('Reference position file = '+refposFile)
+
+# flist_csum ファイルのパス
+file_path = 'flist_csum'
+
+# ファイルを読み込んで内容を取得
+with open(file_path, 'r') as file:
+    file_content = file.read()
+
+# flist_csum から日付を抽出する正規表現パターン
+pattern = r'(\d{4}\d{2}\d{2})\d*'
+
+# 正規表現パターンに一致する日付を全て抽出して date_list に格納
+date_list = re.findall(pattern, file_content)
+
+# date_listには['20220927', '20220928', ..., '20221006']が格納されます
+#print(date_list)
 
     
 # Process for each date in the list
@@ -36,7 +50,7 @@ for date in date_list:
                     'python3',
                     'python/plot_aatr_vel_fig.py',
                     str(date),
-                    'refpos_Hanoi2.dat',
+                    refposFile,
                     str(satNo),
                     str(float(time) / 3600. - 0.1),
                     str(float(time) / 3600. + 0.1)
@@ -53,9 +67,13 @@ for date in date_list:
                     print(f"MaxGrad={data_dict['MaxGrad']}")
                     output = subprocess.run(cmd, capture_output=True)
 
+                    stdout = output.stdout.decode("utf-8")
+                    print(stdout)
+
                     filename = f'output_aatr_vel_{date}-{int(satNo):02d}.png'
-                    mvcmd = ['mv',filename, 'results/figs/']
-                    output2 = subprocess.run(mvcmd)
+                    if os.path.exists(filename):
+                        mvcmd = ['mv',filename, 'results/figs/']
+                        output2 = subprocess.run(mvcmd)
 
 """
 import subprocess
