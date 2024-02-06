@@ -17,6 +17,6 @@ echo 'Running auto_cdf.py'
 python3 auto_cdf.py > auto_cdf.log 2>&1
 find results/sigma_vig/*csum.out > flist_csum
 echo 'Running auto_plot_grad2.py'
-python3 auto_plot_grad2.py flist_csum > auto_plot_grad2.log 2>&1
+python3 auto_plot_grad2d.py flist_csum > auto_plot_grad2d.log 2>&1
 echo 'Running batch_plot_aatr_vel_fig.py'
 python3 batch_plot_aatr_vel_fig.py > auto_plot_aatr_vel_fig.log 2>&1
