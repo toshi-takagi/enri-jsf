@@ -120,9 +120,9 @@ $ python3 auto_plot_grad2.py flist_csum
  -> results/grad2d/grad2d_20220927000000.txt 他
 ```
 
-・擾乱日のリストから日付を読み込み、最大勾配が大きいPRNについて速度測定用のプロットを作成
+・`flist_csum`ファイルから日付を読み込み、grad2dファイルで最大勾配が大きいPRNについて速度測定用のプロットを作成
 ```
-$ python3 batch_plot_aatr_vel_fig.py
+$ python3 batch_plot_aatr_vel_fig.py　（refposFileを場所に合わせてスクリプト冒頭で指定）
  -> results/figs/output_aatr_vel_20221006-20.png 他
 ```
 
@@ -146,7 +146,7 @@ e = end session
 ・擾乱日のリストから日付を読み込み、最大勾配が大きいPRNについてjudgeVelScript.pyでプロット
 を確認した結果（status_vel.txt）を読み込み、Goodとある場合について速度を測定する。
 ```
-$ python3 batch_plot_aatr_vel.py
+$ python3 batch_plot_aatr_vel.py　　（refposFileを場所に合わせてスクリプト冒頭で指定）
  -> velocity_dict.pkl に速度の測定結果の辞書をバイナリで保存
 ```
 
