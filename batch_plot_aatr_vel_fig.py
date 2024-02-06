@@ -52,10 +52,10 @@ for date in date_list:
                     print(command)
                     print(f"MaxGrad={data_dict['MaxGrad']}")
                     output = subprocess.run(cmd, capture_output=True)
- 
 
-
-    
+                    filename = f'output_aatr_vel_{date}-{int(satNo):02d}.png'
+                    mvcmd = ['mv',filename, 'results/figs/']
+                    output2 = subprocess.run(mvcmd)
 
 """
 import subprocess
