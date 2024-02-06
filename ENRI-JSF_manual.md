@@ -191,7 +191,7 @@ find results/sigma_vig/*csum.out > flist_csum
 python3 auto_plot_grad2.py flist_csum
 python3 batch_plot_aatr_vel_fig.py
 ```
-
+この処理を行うためのスクリプトが、`initBatch.sh`になっている。
 
 ### 補足：
 
