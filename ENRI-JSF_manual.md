@@ -30,6 +30,20 @@ $ grep start_date *py
 $ grep end_date *py
 ```
 
+速度、サイズ測定用のスクリプトでSite設定の確認
+```
+plot_aatr_vel.py
+plot_aatr_vel_jsf.py
+plot_aatr_vel_fig.py
+plot_aatr_vel_size.py
+```
+以下の箇所
+```
+#site = ['pht2','vas2','hust']
+site = ['IDN4','IDN3','IDN1']
+```
+
+
 ## １．stec プロット作成
 ```
 $ python3 auto_stec.py  
