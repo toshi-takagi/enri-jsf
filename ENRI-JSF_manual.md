@@ -32,10 +32,7 @@ $ grep end_date *py
 
 速度、サイズ測定用のスクリプトでSite設定の確認
 ```
-plot_aatr_vel.py
-plot_aatr_vel_jsf.py
-plot_aatr_vel_fig.py
-plot_aatr_vel_size.py
+plot_aatr_vel.py plot_aatr_vel_jsf.py plot_aatr_vel_fig.py plot_aatr_vel_size.py
 ```
 以下の箇所
 ```
