@@ -24,6 +24,12 @@ sfcbca_bin =
 cal_stec =
 ```
 
+各スクリプトにある日付範囲設定を確認して設定
+```
+$ grep start_date *py
+$ grep end_date *py
+```
+
 ## １．stec プロット作成
 ```
 $ python3 auto_stec.py  
