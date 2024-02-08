@@ -24,17 +24,17 @@ sfcbca_bin =
 cal_stec =
 ```
 
-各スクリプトにある日付範囲設定を確認して設定
+・各スクリプトにある日付範囲設定を確認して設定
 ```
 $ grep start_date *py
 $ grep end_date *py
 ```
 
-速度、サイズ測定用のスクリプトでSite設定の確認
+・速度、サイズ測定用のスクリプトでSite設定の確認
 ```
 plot_aatr_vel.py plot_aatr_vel_jsf.py plot_aatr_vel_fig.py plot_aatr_size.py
 ```
-以下の箇所
+以下の箇所を変更する。
 ```
 #site = ['pht2','vas2','hust']
 site = ['IDN4','IDN3','IDN1']
@@ -143,8 +143,6 @@ $ python3 batch_plot_aatr_vel_fig.py　（refposFileを場所に合わせてス�
  -> results/figs/output_aatr_vel_20221006-20.png 他
 ```
 
-（要確認） <br>
-IDNのケースで、速度測定用のプロットが一枚も出てこない。`results/grad2d/grad2d_20220927000000.png`他を見ると、プロットされているデータ点が少なすぎる。
 
 ・速度測定に使えるデータの選定
 
