@@ -208,6 +208,11 @@ python3 batch_plot_aatr_vel_fig.py
 ```
 この処理を行うためのスクリプトが、`initBatch.sh`になっている。
 
+・速度測定に必要なファイルをまとめる
+```
+ 2481  tar cvfz forVel.tgz  coord_trans.py ./*txt results/*/*png results/*/*/*png results/grad2d/*txt results/sigma_vig/*csum.out 
+```
+
 ### 補足：
 
 ・スライドショーでプロットを見る
