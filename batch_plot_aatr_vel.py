@@ -111,6 +111,18 @@ for date in date_list:
                         isGood = True
                         
                 if isGood: 
+
+                    # Check if kstr exists in the database
+                    if kstr in database:
+                        print(f"Velocity for {kstr} already exists in the database.")
+                        user_input = input("Do you want to overwrite? ('y' to overwrite, 'd' to delete the entry): ").upper()
+                        if user_input == "D":
+                            del database[kstr]
+                            print(f"Entry {kstr} deleted.")
+                            continue 
+                        elif user_input != "Y":
+                            continue  # Skip to the next iteration if not confirmed
+                    
                     print(command)
                     print(f"MaxGrad={data_dict['MaxGrad']}")
                     
@@ -123,16 +135,6 @@ for date in date_list:
                         
                     if user_input == "Y":
 
-                        # Check if kstr exists in the database
-                        if kstr in database:
-                            print(f"Velocity for {kstr} already exists in the database.")
-                            user_input = input("Do you want to overwrite? ('y' to overwrite, 'd' to delete the entry): ").upper()
-                            if user_input == "D":
-                                del database[kstr]
-                                print(f"Entry {kstr} deleted.")
-                                continue 
-                            elif user_input != "Y":
-                                continue  # Skip to the next iteration if not confirmed
                         
                         output = subprocess.run(cmd, capture_output=True)
 
