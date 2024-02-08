@@ -2,12 +2,15 @@
 # coding: utf-8
 #### plot_aatr_vel.py edited for Ubuntu by M.Nakamura 20210316
 #### based on ~/programs/py_mac/plot_aatr_vel.py
+
 from numpy import *
 from pylab import *
-from coord_trans import *
 import sys
 import os
 import datetime as dt
+
+os.sys.path.append('./')
+from coord_trans import *
 
 class click_counter():
  def __init__(self):
@@ -146,7 +149,8 @@ tec2delay = 40.3e16/f_L1/f_L1
 data_dir = './results/stec/'
 #site = ['kmit','stfd','aero']
 #site = ['vast','hust','pht2']
-site = ['pht2','vas2','hust']
+#site = ['pht2','vas2','hust']
+site = ['IDN4','IDN3','IDN1']
 site_id = [0,1,2]
 ###
 
