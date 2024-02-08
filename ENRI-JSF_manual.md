@@ -247,7 +247,7 @@ $ python3 judgeByDate.py <出力ファイル(Hanoi_Status.txt)>
 ```
   128  sudo apt-get install xfce4 xfce4-goodies
   129  sudo apt-get install tightvncserver
-  193  tightvncserver :1 -localhost no -geometry 1680x980 -alwaysshared -nevershared -clipboard yes -depth 24
+  193  tightvncserver :1 -geometry 1680x980 
   192  vncserver -kill :1
 ```
 
