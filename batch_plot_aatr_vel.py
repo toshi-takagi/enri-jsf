@@ -4,8 +4,9 @@ import os
 import pickle
 
 #refposFile = 'refpos_Hanoi2.dat'
-refposFile = 'refpos_IDN_for_sigma_20230322.txt' #### 20230320
-print('Reference position file = '+refposFile)
+refposFile = 'refpos_IDN_20230318.txt' #### 20230320
+
+print(f'Reference position file = {refposFile}')
 
 def save_database(database, velocityFile):
     """
@@ -50,15 +51,21 @@ else:
 
 
 status_vel = {}
-with open('status_vel.txt', 'r') as status_vel_file:
-    # Iterate through each line in the file
-    for line in status_vel_file:
-        fields = line.strip().split()
-        if len(fields) >= 2:
-            match = re.search(r'(\d{8}-\d+)', fields[0])
-            if match:
-                key = match.group(1)
-                status_vel[key] = fields[1]
+statusFile = 'status_vel.txt'
+if os.path.exists(statusFile):
+    with open(statusFile, 'r') as status_vel_file:
+        # Iterate through each line in the file
+        for line in status_vel_file:
+            fields = line.strip().split()
+            if len(fields) >= 2:
+                match = re.search(r'(\d{8}-\d+)', fields[0])
+                if match:
+                    key = match.group(1)
+                    status_vel[key] = fields[1]
+else:
+    print("## No velocity status file 'status_vel.txt'")
+    print("## Make 'status_vel.txt' file by judgeVelScript.py")
+    exit()
     
 # ...
 
@@ -102,23 +109,29 @@ for date in date_list:
                 if kstr in status_vel:                    
                     if status_vel[kstr] == 'Good':
                         isGood = True
-                    
+                        
                 if isGood: 
                     print(command)
                     print(f"MaxGrad={data_dict['MaxGrad']}")
                     
                     user_input = input(f"Execute command? ('y' to execute, 'q' to quit): ").upper()
+                    
                     if user_input == "Q":
                         print("Quitting...")
                         save_database(database, velocityFile)  
                         exit()
+                        
                     if user_input == "Y":
 
                         # Check if kstr exists in the database
                         if kstr in database:
                             print(f"Velocity for {kstr} already exists in the database.")
-                            user_input = input("Do you want to overwrite? ('y' to overwrite): ").upper()
-                            if user_input != "Y":
+                            user_input = input("Do you want to overwrite? ('y' to overwrite, 'd' to delete the entry): ").upper()
+                            if user_input == "D":
+                                del database[kstr]
+                                print(f"Entry {kstr} deleted.")
+                                continue 
+                            elif user_input != "Y":
                                 continue  # Skip to the next iteration if not confirmed
                         
                         output = subprocess.run(cmd, capture_output=True)

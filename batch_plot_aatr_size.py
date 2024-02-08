@@ -76,24 +76,30 @@ for cmd in new_command_list:
     kstr = f"{cmd[2]}-{cmd[4]}" # date + '-' + satNo
     print(f"### Size measurement for {kstr}")
 
+    
+    # Check if kstr exists in the database
+    if kstr in result_dict:
+        print(f"Size data for {kstr} already exists in the dictionaly.")
+        user_input = input("Do you want to overwrite? ('y' to overwrite, 'd' to delete the entry): ").upper()
+        if user_input == "D":
+            del result_dict[kstr]
+            print(f"Entry {kstr} deleted.")
+            continue 
+        elif user_input != "Y":
+            continue  # Skip to the next iteration if not confirmed
+
+        
+    command = " ".join(cmd)
+    print(command)
     user_input = input(f"Execute command? ('y' to execute, 'q' to quit): ").upper()
     if user_input == "Q":
         print("Quitting...")
         save_database(result_dict, sizeFile)        
         exit()
+
     if user_input == "Y":
-        # Check if kstr exists in the database
-        if kstr in result_dict:
-            print(f"Size data for {kstr} already exists in the dictionaly.")
-            user_input = input("Do you want to overwrite? ('y' to overwrite, 'q' to quit): ").upper()
-            if user_input == "Q":
-                print("Quitting...")
-                # Save the result in binary format
-                save_database(result_dict, sizeFile)            
-                exit()
-            if user_input != "Y":
-                continue  # Skip to the next iteration if not confirmed
-        
+
+            
         # Run the command and capture the output
         result = subprocess.run(cmd, capture_output=True, text=True)
         
