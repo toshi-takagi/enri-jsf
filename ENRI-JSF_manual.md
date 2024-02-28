@@ -28,10 +28,11 @@ cal_stec =
 ```
 plot_aatr_vel.py plot_aatr_vel_jsf.py plot_aatr_vel_fig.py plot_aatr_size.py
 ```
-以下の箇所を変更する。(2023-2024)
+以下の箇所を変更する。(2023-2024データ版)
 ```
-#site = ['pht2','vas2','hust']
-site = ['IDN4','IDN1','IDN5']
+site = ['vas2','hust','pht2'] for Vietnam by 2023/11/17
+site = ['vas2','hus2','pht2'] for Vietnam after 2023/11/17
+site = ['IDN4','IDN1','IDN5'] for IDN
 ```
 
 refposファイルを確認
@@ -41,7 +42,7 @@ Vietnam (after 2023/11/17)  refpos_Hanoi_HUS2.dat
 IDN  refpos_IDN_IDN5.dat
 ```
 
-・各スクリプトにある日付範囲設定を確認して設定。採用するrefposファイルとデータ期間の組み合わせに注意する。
+各スクリプトにある日付範囲設定を確認して設定。採用するrefposファイルとデータ期間の組み合わせに注意する。
 ```
 $ grep start_date *py
 $ grep end_date *py
