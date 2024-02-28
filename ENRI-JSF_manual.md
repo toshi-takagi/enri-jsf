@@ -24,20 +24,27 @@ sfcbca_bin =
 cal_stec =
 ```
 
-・各スクリプトにある日付範囲設定を確認して設定
-```
-$ grep start_date *py
-$ grep end_date *py
-```
-
 ・速度、サイズ測定用のスクリプトでSite設定の確認
 ```
 plot_aatr_vel.py plot_aatr_vel_jsf.py plot_aatr_vel_fig.py plot_aatr_size.py
 ```
-以下の箇所を変更する。
+以下の箇所を変更する。(2023-2024)
 ```
 #site = ['pht2','vas2','hust']
-site = ['IDN4','IDN3','IDN1']
+site = ['IDN4','IDN1','IDN5']
+```
+
+refposファイルを確認
+```
+Vietnam (before 2023/11/17) refpos_Hanoi_HUST.dat
+Vietnam (after 2023/11/17)  refpos_Hanoi_HUS2.dat 
+IDN  refpos_IDN_IDN5.dat
+```
+
+・各スクリプトにある日付範囲設定を確認して設定。採用するrefposファイルとデータ期間の組み合わせに注意する。
+```
+$ grep start_date *py
+$ grep end_date *py
 ```
 
 
