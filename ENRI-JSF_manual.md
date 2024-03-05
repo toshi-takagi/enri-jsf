@@ -191,8 +191,10 @@ $ python3 batch_plot_aatr_vel.py　　（refposFileを場所に合わせてス�
 　→　プロットを見て結果を記録することにした（judgeVelScript.py)
 
 ## ６．サイズの測定
+pythonバージョンの問題で、GCPではminiconda3環境を利用する。python/plot_aatr_size.pyはpython2で実行しないとエラーが出るため。
 ```
-$ python3 batch_plot_aatr_size.py
+$ conda activate py27
+(py27) $ python3 batch_plot_aatr_size.py
  -> size_dict.pkl にサイズの測定結果の辞書をバイナリで保存
 ```
 
