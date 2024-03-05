@@ -219,7 +219,7 @@ python3 batch_plot_aatr_vel_fig.py
 
 ・速度測定に必要なファイルをまとめる
 ```
-tar cvfz forVel.tgz  python/coord_trans.py ./*txt results/stec/*.stec results/*/*png results/*/*/*png results/grad2d/*txt results/sigma_vig/*csum.out 
+tar cvfz forVel.tgz  python/coord_trans.py ./*txt ./refpos* results/stec/*.stec results/*/*png results/*/*/*png results/grad2d/*txt results/sigma_vig/*csum.out results/sigma_vig/*cdf.out 
 ```
 
 ### 補足：
