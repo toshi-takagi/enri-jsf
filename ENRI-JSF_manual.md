@@ -277,3 +277,12 @@ git clone https://github.com/toshi-takagi/enri-jsf.git
 
 ```
 
+・miniconda
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+cd miniconda3/bin/
+./conda create --name py27 python=2.7
+conda activate py27
+```
