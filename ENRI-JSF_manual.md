@@ -24,20 +24,28 @@ sfcbca_bin =
 cal_stec =
 ```
 
-・各スクリプトにある日付範囲設定を確認して設定
-```
-$ grep start_date *py
-$ grep end_date *py
-```
-
 ・速度、サイズ測定用のスクリプトでSite設定の確認
 ```
 plot_aatr_vel.py plot_aatr_vel_jsf.py plot_aatr_vel_fig.py plot_aatr_size.py
 ```
-以下の箇所を変更する。
+以下の箇所を変更する。(2023-2024データ版)
 ```
-#site = ['pht2','vas2','hust']
-site = ['IDN4','IDN3','IDN1']
+site = ['vas2','hust','pht2'] for Vietnam by 2023/11/17
+site = ['vas2','hus2','pht2'] for Vietnam after 2023/11/17
+site = ['IDN4','IDN1','IDN5'] for IDN
+```
+
+refposファイルを確認
+```
+Vietnam (before 2023/11/17) refpos_Hanoi_HUST.dat
+Vietnam (after 2023/11/17)  refpos_Hanoi_HUS2.dat 
+IDN  refpos_IDN_IDN5.dat
+```
+
+各スクリプトにある日付範囲設定を確認して設定。採用するrefposファイルとデータ期間の組み合わせに注意する。
+```
+$ grep start_date *py
+$ grep end_date *py
 ```
 
 
@@ -172,6 +180,7 @@ $ python3 batch_plot_aatr_vel.py　　（refposFileを場所に合わせてス�
 ```
 {'20221004-27': {'cmd': ['python3', 'python/plot_aatr_vel_jsf.py', '20221004', 'refpos_Hanoi2.dat', '27', '12.543888888888889', '12.743888888888888'], 'V': '138.899076', 'Angle': '-5.844579'}, '20221004-1': {'cmd': ['python3', 'python/plot_aatr_vel_jsf.py', '20221004', 'refpos_Hanoi2.dat', '1', '15.763611111171612', '15.96361111117161'], 'V': '173.346284', 'Angle': '-9.994422'}}
 ```
+速度測定ができない場合は空の速度情報が入る。
 
 ### メモ
 最大勾配の大きさだけでは、速度測定ができない場合が多く作業効率が悪い。
@@ -182,8 +191,10 @@ $ python3 batch_plot_aatr_vel.py　　（refposFileを場所に合わせてス�
 　→　プロットを見て結果を記録することにした（judgeVelScript.py)
 
 ## ６．サイズの測定
+pythonバージョンの問題で、GCPではminiconda3環境を利用する。python/plot_aatr_size.pyはpython2で実行しないとエラーが出るため。
 ```
-$ python3 batch_plot_aatr_size.py
+$ conda activate py27
+(py27) $ python3 batch_plot_aatr_size.py
  -> size_dict.pkl にサイズの測定結果の辞書をバイナリで保存
 ```
 
@@ -210,7 +221,7 @@ python3 batch_plot_aatr_vel_fig.py
 
 ・速度測定に必要なファイルをまとめる
 ```
-tar cvfz forVel.tgz  python/coord_trans.py ./*txt results/stec/*.stec results/*/*png results/*/*/*png results/grad2d/*txt results/sigma_vig/*csum.out 
+tar cvfz forVel.tgz  python/coord_trans.py ./*txt ./refpos* results/stec/*.stec results/*/*png results/*/*/*png results/grad2d/*txt results/sigma_vig/*csum.out results/sigma_vig/*cdf.out 
 ```
 
 ### 補足：
@@ -268,3 +279,12 @@ git clone https://github.com/toshi-takagi/enri-jsf.git
 
 ```
 
+・miniconda
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+./Miniconda3-latest-Linux-x86_64.sh
+cd miniconda3/bin/
+./conda create --name py27 python=2.7
+conda activate py27
+```
