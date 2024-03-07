@@ -4,7 +4,10 @@ import os
 import pickle
 
 #refposFile = 'refpos_Hanoi2.dat'
-refposFile = 'refpos_IDN_20230318.txt' #### 20230320
+#refposFile = 'refpos_IDN_20230318.txt' #### 20230320
+
+refposFile = 'refpos_Hanoi_HUST.dat'
+#refposFile = 'refpos_Hanoi_HUS2.dat'
 
 print(f'Reference position file = {refposFile}')
 
@@ -71,6 +74,11 @@ else:
 
 # Process for each date in the list
 for date in date_list:
+    gradfile = f'results/grad2d/grad2d_{date}000000.txt'
+    if not os.path.exists(gradfile):
+        print("### No grad2d file!!")
+        continue
+    
     # Read data from the specified file for the current date
     with open(f'results/grad2d/grad2d_{date}000000.txt', 'r') as awk_input_file:
         # Iterate through each line in the file
