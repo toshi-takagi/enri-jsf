@@ -2,6 +2,7 @@
 # coding: utf-8
 #### plot_aatr_vel.py edited for Ubuntu by M.Nakamura 20210316
 #### based on ~/programs/py_mac/plot_aatr_vel.py
+
 from numpy import *
 from pylab import *
 import sys
@@ -10,7 +11,6 @@ import datetime as dt
 
 os.sys.path.append('./')
 from coord_trans import *
-
 
 class click_counter():
  def __init__(self):
@@ -151,8 +151,8 @@ data_dir = './results/stec/'
 #site = ['vast','hust','pht2']
 #site = ['pht2','vas2','hust']
 #site = ['IDN4','IDN3','IDN1']
-site = ['vas2','hust','pht2']  # by DOY 321, 2023 (2023/11/17)
-#site = ['vas2','hus2','pht2'] # after DOY 342, 2023 (2023/12/9) 
+#site = ['vas2','hust','pht2']
+site = ['vas2','hus2','pht2']
 site_id = [0,1,2]
 ###
 
@@ -243,12 +243,6 @@ aatr1=d1[id1,8]
 aatr2=d2[id2,8]
 aatr3=d3[id3,8]
 
-######### JSF
-if (max(stec2*tec2delay) > 1000): 
- print("Too large STEC2: "+str(max(stec2)))
- exit()
-
-""" 
 fig1 = figure(1)
 subplot(3,1,1)
 plot(t1,stec1*tec2delay,label=site[site_id[0]])
@@ -272,8 +266,6 @@ plot(t3,stec3*tec2delay,label=site[site_id[2]])
 xlim(trange1[0],trange1[1])
 xlabel('GPST')
 legend()
-"""
-######### JSF
 
 dstec21 = zeros(86400)
 t21 = zeros(86400)
@@ -327,6 +319,8 @@ cid5 = fig5.canvas.mpl_connect('button_press_event',onclick)
 #cid5 = fig5.canvas.mpl_connect('button_press_event',oncpaint)
 cid5 = fig5.canvas.mpl_connect('key_press_event',onkey)
 
-show()
+filename = f'output_aatr_vel_{date}-{prn0:02d}.png'
+fig5.savefig(filename)
+#show()
 
 

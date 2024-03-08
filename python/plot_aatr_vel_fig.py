@@ -150,7 +150,8 @@ data_dir = './results/stec/'
 #site = ['kmit','stfd','aero']
 #site = ['vast','hust','pht2']
 #site = ['pht2','vas2','hust']
-site = ['IDN4','IDN3','IDN1']
+#site = ['IDN4','IDN3','IDN1']
+site = ['vas2','hust','pht2']
 site_id = [0,1,2]
 ###
 
