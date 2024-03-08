@@ -1,0 +1,1 @@
+/home/takagits/.local/bin/gitpush.sh

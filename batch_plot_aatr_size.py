@@ -46,6 +46,7 @@ new_command_list = []
 # Process each entry in the database
 for key, entry in database.items():
     # Replace 'python/plot_aatr_vel.py' with 'python/plot_aatr_size.py'
+    entry['cmd'][0] = 'python2'
     entry['cmd'][1] = 'python/plot_aatr_size.py'
     
     # Add V and Angle to the cmd list

@@ -1,3 +1,4 @@
+from datetime import datetime
 import subprocess
 import re
 import os
@@ -15,7 +16,7 @@ refposFile2 = 'refpos_Hanoi_HUS2.dat'
 
 
 # flist_csum ファイルのパス
-file_path = 'flist_csum1'
+file_path = 'flist_csum2'
 
 # ファイルを読み込んで内容を取得
 with open(file_path, 'r') as file:
@@ -66,11 +67,10 @@ for date in date_list:
                 else:
                     print(f'Reference position file for {date} = '+refposFile)
 
-                    
                 # Extract necessary information
                 cmd = [
                     'python3',
-                    'python/plot_aatr_vel_fig.py',
+                    'python/plot_aatr_vel_fig2.py',
                     str(date),
                     refposFile,
                     str(satNo),
@@ -79,8 +79,7 @@ for date in date_list:
                 ]
 
                 command = " ".join(cmd)
-                #print(command)
-                
+
                 # Execute the Python script
                 if float(data_dict['MaxGrad']) > 100:
                     kstr = date + '-' + satNo
