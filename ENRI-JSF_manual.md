@@ -187,6 +187,11 @@ e = end session
 ```
 結果は、`status_vel.txt`に出力される。
 
+・stasu_vel.txtにMaxGrad他の情報を追記する
+```
+$ python3 makeGradTable.py
+  -> status_vel_with_info.txt 
+```
 
 ・擾乱日のリストから日付を読み込み、最大勾配が大きいPRNについてjudgeVelScript.pyでプロット
 を確認した結果（status_vel.txt）を読み込み、Goodとある場合について速度を測定する。
