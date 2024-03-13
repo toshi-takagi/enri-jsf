@@ -55,7 +55,7 @@ $ python3 auto_stec.py
 $ python3 auto_plot_aatr.py 
 ```
 
-## ２．時系列/grad2Dプロット確認
+## ２．時系列プロット確認
 
 ファイルの例：
 ```
