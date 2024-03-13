@@ -55,7 +55,7 @@ $ python3 auto_stec.py
 $ python3 auto_plot_aatr.py 
 ```
 
-## ２．時系列プロット確認
+## ２．時系列/grad2Dプロット確認
 
 ファイルの例：
 ```
@@ -81,6 +81,7 @@ x = bad data
 e = end session  
 ```
 結果は、`status.txt`に出力される。
+
 
 
 
@@ -121,16 +122,28 @@ $ python3 makeQuietList.py 　（入力ファイルは status.txt）
  -> disturb_list.txt (YYYYMMDDのリスト）
 ```
 
-・CDFプロット <br> 
+### grad2d 確認作業（2024/3/13)
+・CDFプロット作成の結果、Gaussianではカバーできない低頻度のテールができたため、grad2dの図を確認して、より質の高い静穏日のリストを作成することにした。
+```
+$ python3 judgeScript2d.py  （入力ファイル[results/grad2d/grad2d_*.png]）
+　-> status2d.txt
+$ python3 makeQuietList2d.py 
+　-> quiet_list2d.txt
+```
+
+・CDFプロット: Vietnam <br> 
 ```
 <<<InflationFactorを調整して適正値を決定する>>>
-$ python3 python/plot_cdf_tot.py 1.2 quiet_list.txt
-
-Mean           : 0.087859 [mm/km]
-Std. (Raw)     : 1.687723 [mm/km]
-Std (Inflated).: 2.531584 [mm/km]
- -> ./20210319_cdf_tot.png （ファイル名はplot_cdf_tot.py中に記載あり）
+iono@hp-z2-tower-g4:~/analysis/Vietnam$ python3 python/plot_cdf_tot.py 2.25 quiet_list2d.txt 
+Mean           : 0.102476 [mm/km]
+Std. (Raw)     : 1.790366 [mm/km]
+Std (Inflated).: 4.028324 [mm/km]
+  -> 2023-2024_cdf_tot.png
 ```
+
+・CDFプロット: IDN <br> 
+grad2dでデータを選別すると、ほとんど使える日がない
+
 
 ## ５.　速度の測定
 
