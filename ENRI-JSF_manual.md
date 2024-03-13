@@ -138,12 +138,18 @@ iono@hp-z2-tower-g4:~/analysis/Vietnam$ python3 python/plot_cdf_tot.py 2.25 quie
 Mean           : 0.102476 [mm/km]
 Std. (Raw)     : 1.790366 [mm/km]
 Std (Inflated).: 4.028324 [mm/km]
-  -> 2023-2024_cdf_tot.png
+  -> 2023-2024_cdf_tot_fac2.25.png
 ```
 
 ・CDFプロット: IDN <br> 
-grad2dでデータを選別すると、ほとんど使える日がない
-
+grad2dでデータを選別すると、4日のみ
+```
+iono@hp-z2-tower-g4:~/analysis/IDN$ python3 python/plot_cdf_tot.py 1.45 quiet_list2d.txt
+Mean           : 1.748113 [mm/km]
+Std. (Raw)     : 4.628396 [mm/km]
+Std (Inflated).: 6.711175 [mm/km]
+  -> 2023-2024_cdf_tot_fac1.45.png
+```
 
 ## ５.　速度の測定
 
